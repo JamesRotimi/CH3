@@ -13,8 +13,9 @@ end
     @user = User.new(user_params)
 
     if @user.save
-      redirect_to @user
+      log_in @user
       flash[:success] = "Thank you for signing up"
+      redirect_to @user
       else
       render 'new'
     end
